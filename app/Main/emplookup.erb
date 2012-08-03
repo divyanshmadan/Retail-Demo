@@ -1,0 +1,31 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1>Retail Demo</h1>
+    <a href="<%= url_for(:action => :mainpage) %>" class="ui-btn-left"  data-icon="back" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+     Back 
+    </a>
+      <a href="<%= url_for :action => :emprefresh %>" class="ui-btn-right" data-icon="refresh">
+            Reset
+          </a>
+  </div>
+
+  <div data-role="content"  data-theme="a" >
+        <div class="ui-body ui-body-b" >  
+                    <form data-ajax="false" action="<%= url_for(:action=>:emplogin) %>" method="POST">
+                      <div data-role="fieldcontain" >
+                         <label for="emplogin">Employee ID:</label>
+                         <input type="text" name="emplogin" id="emplogin" placeholder="Employee ID"  />
+                      </div>
+               <center><a href="<%= url_for( :action => :bartake) %>">
+              
+        <img src="/public/images/scan.png" />
+            </a></center>
+                    
+                    
+                      <input  type="submit" value="Submit"/>
+                    </form></div><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/>   <br/><br/>  <br/><br/> <br/><br/> 
+                   
+   </div>
+</div>
+     

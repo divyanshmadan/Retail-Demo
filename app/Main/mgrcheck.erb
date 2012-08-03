@@ -1,0 +1,89 @@
+<div data-role="page">
+<script type="text/javascript" src="/public/jquery/jqplot.barRenderer.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  var s1 = [23, 100, 100, 100,100, 100, 100,100, 100, 100];
+  var s2 = [0, 5, 13, 24,4,22,12,13,43,21];
+  
+  plot3 = $.jqplot('graph', [s1, s2], {
+    // Tell the plot to stack the bars.
+    animate: true,
+    stackSeries: true,
+    captureRightClick: true,
+    seriesDefaults:{
+      renderer: $.jqplot.BarRenderer,
+      rendererOptions: {
+          // Put a 30 pixel margin between bars.
+          barMargin: 10,
+          // Highlight bars when mouse button pressed.
+          // Disables default highlighting on mouse over.
+          highlightMouseDown: true   
+          
+      },
+      pointLabels: {show: false}
+    },
+grid: {
+           background: 'rgba(57,57,57,0.0)',
+           drawBorder: false,
+           shadow: false,
+           gridLineColor: '#666666',
+           gridLineWidth: 2
+       },
+series:[
+       {color: '#4E87C2',label: 'Working Hours'},{color: '#D3EB3B',label: 'Overtime'},
+   ],
+    axes: {
+      xaxis: {
+          renderer: $.jqplot.CategoryAxisRenderer
+      },
+      yaxis: {
+        // Don't pad out the bottom of the data range.  By default,
+        // axes scaled as if data extended 10% above and below the
+        // actual range to prevent data points right on grid boundaries.
+        // Don't want to do that here.
+        padMin: 0
+      }
+    },
+     grid:
+     {
+       gridLineColor: '#ffffff'
+     },
+    legend: {
+      show: true,
+      location: 'n',
+      placement: 'inside'
+    }      
+  });
+  // Bind a listener to the "jqplotDataClick" event.  Here, simply change
+  // the text of the info3 element to show what series and ponit were
+  // clicked along with the data for that point.
+  $('#graph').bind('jqplotDataClick', 
+    function (ev, seriesIndex, pointIndex, data) {
+      $('#info3').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
+    }
+  ); 
+});
+</script>
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1>Retail Demo</h1>
+    <a href="<%= url_for(:action => :mgrcheckmenu) %>" class="ui-btn-left"  data-icon="back" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+     Back 
+    </a>
+      
+  </div>
+      <div data-role="content" class="ui-body ui-body-a">
+      <center><h1 style="border-top-style:solid;
+                  border-top-color:#4E87C2;
+                  border-right-style:solid;
+                  border-right-color:#4E87C2;
+                  border-bottom-style:solid;
+                  border-bottom-color:#D3EB3B;
+                  border-left-style:solid;
+                  border-left-color:#D3EB3B;">Monthly vs Overtime</h1></center>
+<div id="graph" style="margin-right:10px;width:100%;height:100%;">
+     
+</div>
+      
+      <br/><br/> <br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+</div>

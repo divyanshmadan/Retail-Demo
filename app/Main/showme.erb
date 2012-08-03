@@ -1,0 +1,50 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1><%= @main.name %></h1>
+    <a data-ajax="false" href="<%= url_for :action => :showtasks %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    
+  </div>
+
+      <div data-role="content" class="ui-body ui-body-a">
+    <ul data-role="listview">
+      
+          <li style="background-color:#4B4B4B;">
+            <div class="itemLabel">Task</div>
+            <div class="itemValue"><%= @main.task %></div>
+          </li>
+      
+          <li style="background-color:#4B4B4B;">
+            <div class="itemLabel">Location</div>
+            <div class="itemValue"><%= @main.location %></div>
+          </li>
+      <li style="background-color:#4B4B4B;">
+                 <div class="itemLabel">Status</div>
+                 <div class="itemValue"><%= @main.status %></div>
+               </li>
+      <li style="background-color:#4B4B4B;">
+                 <div class="itemLabel">Priority</div>
+                 <div class="itemValue"><%= @main.priority %></div>
+               </li>
+      <li style="background-color:#4B4B4B;">
+                 <div class="itemLabel">Details</div>
+                 <div class="itemValue"><%= @main.details %></div>
+               </li>
+      <li style="background-color:#4B4B4B;">
+                 <div class="itemLabel">Time</div>
+                 <div class="itemValue"><%= @main.time %></div>
+               </li>
+    </ul>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  </div>
+      <div data-role="footer" data-position="fixed">
+     
+      <div data-role="navbar">
+                           <ul>
+                             <li><a data-ajax="false" href="<%= url_for(:action => :complete, :id => @main.object) %>" class="ui-btn-active">Complete</a></li>
+                             <li><a data-ajax="false" href="<%= url_for(:action => :cantcomplete, :id => @main.object) %>">Can't Complete</a></li>
+                           </ul>
+                         </div></div>
+</div>

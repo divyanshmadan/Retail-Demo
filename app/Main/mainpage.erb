@@ -1,0 +1,43 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1>Retail Demo</h1>
+    <a href="<%= url_for(:action => :logout) %>" class="ui-btn-right" data-icon="delete"  <%= "data-ajax='false'" if is_bb6 %>>
+      Exit  
+    </a>
+   
+  </div>
+	<div class="ui-body ui-body-a">
+  
+  
+      <center>
+        <div class="content-primary"  style="" >  
+            <ul data-role="listview" data-theme="b" >
+              <li data-icon="false" style="" ><a data-ajax="false" href="<%= url_for(:action => :bmain) %>">
+                <img src="/public/images/bulletins.png" style="margin-left:10px;"/>
+                <h1><font size="4">Bulletins</font></h1>
+               
+              </a></li>
+              <li data-icon="false" style="" ><a data-ajax="false" href="<%= url_for(:action => :taskdisp) %>">
+                <img src="/public/images/tasks.png" style="margin-left:10px;" />
+                <h3><font size="4">Tasks</font></h3>
+               
+              </a></li>
+              <li data-icon="false" style="" ><a data-ajax="false" href="<%= url_for(:action => :emplogin) %>">
+                <img src="/public/images/employees.png" style="margin-left:10px;" />
+                <h3><font size="4">Employee Lookup</font></h3>
+               
+              </a></li>
+              <li data-icon="false" style="" ><a data-ajax="false" href="<%= url_for(:action => :itemlookup) %>">
+                <img src="/public/images/Item_look_up.png" style="margin-left:10px;" />
+                <h3><font size="4">Item Lookup</font></h3>
+               
+              </a></li>
+             
+            </ul>
+            
+          </div></center>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  </div>
+   
+</div>

@@ -1,0 +1,175 @@
+<div data-role="page">
+<script type="text/javascript" src="/public/jquery/jqplot.barRenderer.min.js"></script>
+<script type="text/javascript" src="/public/jquery/jqplot.categoryAxisRenderer.min.js"></script>
+<script type="text/javascript" src="/public/jquery/jqplot.pointLabels.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+  
+  
+ 
+    // For horizontal bar charts, x an y values must will be "flipped"
+    // from their vertical bar counterpart.
+    var plot2 = $.jqplot('graph1', [
+        [[6,3]], 
+        [[11,3]]], 
+        {
+grid: {
+           background: 'rgba(57,57,57,0.0)',
+           drawBorder: false,
+           shadow: false,
+           gridLineColor: '#666666',
+           gridLineWidth: 2
+       },
+          legend: {
+               show: true,
+               location: 'se',
+               placement: 'inside'
+             }  ,
+          animate: true,
+        seriesDefaults: {
+            renderer:$.jqplot.BarRenderer,
+            // Show point labels to the right ('e'ast) of each bar.
+            // edgeTolerance of -15 allows labels flow outside the grid
+            // up to 15 pixels.  If they flow out more than that, they 
+            // will be hidden.
+            pointLabels: { show: false, location: 'e', edgeTolerance: -15 },
+            // Rotate the bar shadow as if bar is lit from top right.
+            shadowAngle: 135,
+            // Here's where we tell the chart it is oriented horizontally.
+            rendererOptions: {
+                barDirection: 'horizontal',
+          barWidth: 30 
+            }
+        },
+          series:[
+                 {color: '#4E87C2',label: '2011'},{color: '#D3EB3B',label: '2012'},
+             ],
+        axes: {
+          xaxis: {
+                         
+                          tickOptions: {
+                             
+                              textColor: '#dddddd'
+                          },
+                         
+                      },
+            yaxis: {
+                renderer: $.jqplot.CategoryAxisRenderer,
+          tickOptions: {
+                            
+                            
+                               show:false
+                         }
+            }
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+
+    // For horizontal bar charts, x an y values must will be "flipped"
+    // from their vertical bar counterpart.
+    var plot2 = $.jqplot('graph2', [
+        [[4,3]], 
+        [[11,3]]], 
+        {
+grid: {
+           background: 'rgba(57,57,57,0.0)',
+           drawBorder: false,
+           shadow: false,
+           gridLineColor: '#666666',
+           gridLineWidth: 2
+       },
+          legend: {
+               show: true,
+               location: 'se',
+               placement: 'inside'
+             }  ,
+          animate: true,
+        seriesDefaults: {
+            renderer:$.jqplot.BarRenderer,
+            // Show point labels to the right ('e'ast) of each bar.
+            // edgeTolerance of -15 allows labels flow outside the grid
+            // up to 15 pixels.  If they flow out more than that, they 
+            // will be hidden.
+            pointLabels: { show: false, location: 'e', edgeTolerance: -15 },
+            // Rotate the bar shadow as if bar is lit from top right.
+            shadowAngle: 135,
+            // Here's where we tell the chart it is oriented horizontally.
+            rendererOptions: {
+                barDirection: 'horizontal',
+          barWidth: 30 
+            }
+        },
+          series:[
+                 {color: '#4E87C2',label: '2011'},{color: '#D3EB3B',label: '2012'},
+             ],
+        axes: {
+          xaxis: {
+                         
+                          tickOptions: {
+                             
+                              textColor: '#dddddd'
+                          },
+                         
+                      },
+            yaxis: {
+                renderer: $.jqplot.CategoryAxisRenderer,
+          tickOptions: {
+                            
+                            
+                               show:false
+                         }
+            }
+        }
+    });
+});
+</script>
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1>Retail Demo</h1>
+    <a href="<%= url_for(:action => :showitem, :id => @main.object)  %>" class="ui-btn-left"  data-icon="back" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+     Back 
+    </a>
+      
+  </div>
+
+  <div data-role="content"  data-theme="a" >
+ <center><h1 style="border-top-style:solid;
+border-top-color:#4E87C2;
+border-right-style:solid;
+border-right-color:#4E87C2;
+border-bottom-style:solid;
+border-bottom-color:#D3EB3B;
+border-left-style:solid;
+border-left-color:#D3EB3B;">Revenue</h1></center>
+<div id="graph1" style="height:175px;">
+     
+</div>
+      <center><h1 style="border-top-style:solid;
+border-top-color:#4E87C2;
+border-right-style:solid;
+border-right-color:#4E87C2;
+border-bottom-style:solid;
+border-bottom-color:#D3EB3B;
+border-left-style:solid;
+border-left-color:#D3EB3B;">Profit</h1></center>
+      <div id="graph2" style="height:175px;">
+           
+      </div>
+      <br/><br/> <br/><br/> 
+</div>
+            <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar" >
+                      <ul>
+                        <li><a data-ajax="false" href="<%= url_for :action => :itemgraph, :id => @main.object  %>" data-icon="false">Units Sold</a></li>
+                        <li><a data-ajax="false" href="<%= url_for :action => :itemgraph2, :id => @main.object  %>" data-icon="false" class="ui-btn-active">Revenue/Profit</a></li>
+                        
+                      </ul>
+                    </div><!-- /navbar -->
+                  </div>
+</div>
+                          

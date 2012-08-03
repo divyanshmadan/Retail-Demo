@@ -1,0 +1,31 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1>Retail Demo</h1>
+    <a data-ajax="false" href="<%= url_for(:action => :itemlookup) %>" class="ui-btn-left"  data-icon="back" data-direction="reverse" style="height:25px;width:80px;font-size:0.65em;margin-top:1px;line-height:12px;" <%= "data-ajax='false'" if is_bb6 %>>
+     Back 
+    </a>
+       
+  </div>
+
+  <div data-role="content"  data-theme="a" >
+      <ul data-role="listview">
+      <% if @mainitemscans %>          
+      <% @mainitemscans.each do |accept| %>
+               
+                     <li >
+                       <a href="<%= url_for :action => :showitem, :id => accept.object %>">
+                         <h1><%= accept.itemname %></h1>
+                   <p><%= accept.model %></p>
+                       </a>
+                     </li>
+               
+                             
+                   
+                 <% end %>
+      <% end %>
+               </ul>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+     
+</div>

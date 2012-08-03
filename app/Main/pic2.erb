@@ -1,0 +1,30 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1>Retail Demo</h1>
+    
+      
+  </div>
+<div data-role="content" class="ui-body ui-body-a">
+      <ul data-role="listview">
+                 <li style="background-color:#4B4B4B;">
+            <div class="itemLabel">Itemname</div>
+            <div class="itemValue"><%= @main.itemname %></div>
+          </li>
+      
+        <div data-theme="a"><img src=<%= @main.pic2 %> style="width:100%;height:100%" /></div>
+      
+               </ul>
+</div>
+<div data-role="footer" data-id="foo1" data-position="fixed">
+  <div data-role="navbar">
+    <ul style="height:70px;">
+      <li><a data-ajax="false" href="<%= url_for( :action => :showpic, :id => @main.object) %>" style="height:70px;"><img src="/public/images/Backward.png" /></a></li>
+      <li><a href="" style="height:70px;"><font size="5">2 of 3</font></center> </a></li>
+      <li><a data-ajax="false" href="<%= url_for( :action => :pic3, :id => @main.object) %>" ><img src="/public/images/Forward.png" /></a></li>
+      
+    </ul>
+  </div><!-- /navbar -->
+</div><!-- /footer -->
+       
+</div>

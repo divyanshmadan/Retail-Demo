@@ -1,0 +1,49 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1><%= @main.name %></h1>
+    <a href="<%= url_for :action => :itemlookup,:id => @main.object %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    
+  </div>
+
+      <div data-role="content" class="ui-body ui-body-a">
+    <ul data-role="listview">
+      
+          <li style="background-color:#4B4B4B;">
+            <div class="itemLabel">Itemname</div>
+            <div class="itemValue"><%= @main.itemname %></div>
+          </li>
+      
+          <li style="background-color:#4B4B4B;">
+            <div class="itemLabel">Model</div>
+            <div class="itemValue"><%= @main.model %></div>
+          </li>
+      <li style="background-color:#4B4B4B;">
+                 <div class="itemLabel">Price</div>
+                 <div class="itemValue"><%= @main.price %></div>
+               </li>
+      <li style="background-color:#4B4B4B;">
+                 <div class="itemLabel">UPC</div>
+                 <div class="itemValue"><%= @main.upc %></div>
+               </li>
+      <li style="background-color:#4B4B4B;">
+                 <div class="itemLabel">Stock</div>
+                 <div class="itemValue"><%= @main.stock %></div>
+               </li>
+     
+    </ul>
+ <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+   
+ </div>
+      <div data-role="footer" data-position="fixed">
+          <div data-role="navbar">
+            <ul>
+              <li><a  data-ajax= "false" href="<%= url_for( :action => :showpic, :id => @main.object) %>" data-icon="false"><img src="/public/images/images.png" /></a></li>
+              <li><a data-ajax="false" href="<%= url_for :action => :itemgraph, :id => @main.object %>" data-icon="false" ><img src="/public/images/graph.png" /></a></li>
+              <li><a data-ajax="false" href="<%= url_for( :action => :showweb, :id => @main.object) %>" data-icon="false"><img src="/public/images/web.png" /></a></li>
+            </ul>
+          </div><!-- /navbar -->
+        </div>
+</div>

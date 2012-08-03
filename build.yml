@@ -1,0 +1,33 @@
+sdkversion: "3.3.3"
+name: "Retail Demo"
+version: "1.0"
+vendor: "rhomobile"
+build: "debug"
+bbver: "4.6"
+applog: "rholog.txt"
+iphone:
+  configuration: "Release"
+  sdk: "iphonesimulator5.0"
+  provisionprofile: 
+  codesignidentity: 
+  entitlements: 
+  BundleIdentifier: "com.rhomobile.rd"
+  BundleURLScheme: "rd"
+wp:
+  productid: "bdd95e50-b3da-012f-3140-00271351a744"
+symbian:
+  uid: "0xedd51c63"
+android:
+  version: "4.0.3"
+  android_title: 0
+  extensions:
+    - json
+    - barcode
+app_type: "rhoelements"
+capabilities:
+  - camera
+  - native_browser
+  - motorola_browser
+motorola_license_company: "Landon Essig"
+motorola_license: "7778656A081D151A000307711A7E1C75"
+extensions:

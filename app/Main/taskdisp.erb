@@ -1,0 +1,31 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1>Retail Demo</h1>
+    <a data-ajax="false" href="<%= url_for(:action => :mainpage) %>" class="ui-btn-left"  data-icon="back" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+     Back 
+    </a>
+      
+  </div>
+      <div data-role="content" class="ui-body ui-body-a">
+      <ul data-role="listview">
+                 <% @mains.each do |main| %>
+                 
+                     <li>
+                       <a data-ajax="false" href="<%= url_for :action => :show, :id => main.object %>">
+                         <%= main.task %>
+                       </a>
+                     </li>
+                 
+                 <% end %>
+               </ul>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+      <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+                  <ul>
+                    <li><a data-ajax="false" href="<%= url_for(:action => :taskdisp) %>" class="ui-btn-active">Open Tasks</a></li>
+                    <li><a data-ajax="false" href="<%= url_for(:action => :showtasks) %>">My tasks</a></li>
+                  </ul>
+                </div></div>
+</div>

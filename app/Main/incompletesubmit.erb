@@ -1,0 +1,31 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1><%= @main.name %></h1>
+    <a href="<%= url_for :action => :showtasks %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    
+  </div>
+
+      <div data-role="content" class="ui-body ui-body-a">
+      <center><h1 style="border-top-style:solid;
+                 border-top-color:#4E87C2;
+                 border-right-style:solid;
+                 border-right-color:#4E87C2;
+                 border-bottom-style:solid;
+                 border-bottom-color:#000000;
+                 border-left-style:solid;
+                 border-left-color:#000000;">Reason</h1></center>
+      <div data-role="fieldcontain">
+              
+      <textarea cols="30" rows="8" style="width:235px;" name="textarea" id="textarea" ></textarea>
+          </div> 
+         <br/><br/>
+   <a href="<%= url_for(:action => :cantcompletenow, :id => @main.object) %>" data-role="button" data-theme="b">Submit</a>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/>   <br/><br/><br/><br/><br/><br/><br/><br/><br/>   
+      </div>
+     
+
+       
+</div>

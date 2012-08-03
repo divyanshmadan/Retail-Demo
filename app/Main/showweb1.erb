@@ -1,0 +1,66 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1>Retail Demo</h1>
+    <a href="<%= url_for(:action => :showitem, :id => @main.object) %>" class="ui-btn-left"  data-icon="back" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+     Back 
+    </a>
+      
+  </div>
+      <div data-role="content" class="ui-body ui-body-a">
+      <ul data-role="listview">
+                 <li style="background-color:#4B4B4B;">
+            <div class="itemLabel">Itemname</div>
+            <div class="itemValue"><%= @main.itemname %></div>
+          </li>
+      
+          <li style="background-color:#4B4B4B;">
+            <div class="itemLabel">Model</div>
+            <div class="itemValue"><%= @main.model %></div>
+          </li>
+      <li style="background-color:#4B4B4B;">
+                 <div class="itemLabel">Price</div>
+                 <div class="itemValue"><%= @main.price %></div>
+               </li>
+     
+               </ul>
+               <br/>
+               
+      <a  href="<%= url_for( :action => :checkconnection, :id => @main.object ) %>" data-role="button" data-theme="b">Compare Prices</a>
+      <% if $connect == "true" %>
+      <table summary="" style="border:2px solid #4E87C2;width:100%;">
+                
+                 <thead style="border:2px solid #4E87C2;">
+                   <tr style="border:2px solid #4E87C2;">
+                      <th scope="col" style="border:2px solid #4E87C2;">Vendor:</th>  
+                     <th scope="col" style="border:2px solid #4E87C2;">Price:</th>  
+                  
+                   </tr>
+                 </thead>
+                 <tfoot style="border:2px solid #4E87C2;">
+                   <tr style="border:2px solid #4E87C2;">
+                     <center><td colspan="5" style="border:2px solid #4E87C2;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total: 3 Comparisons</td></center>
+                   </tr>
+                 </tfoot>
+                 <tbody style="border:2px solid #4E87C2;">
+                 <tr style="border:2px solid #4E87C2;">
+                   <th scope="row" style="border:2px solid #4E87C2;">Best Buy</th>
+                   <td style="border:2px solid #4E87C2;"><center>$188.00</center></td>
+               
+                 </tr>
+                 <tr style="border:2px solid #4E87C2;">
+                   <th scope="row" style="border:2px solid #4E87C2;">Target</th>
+                   <td style="border:2px solid #4E87C2;"><center>$138.00</center></td>
+                 
+                 </tr>
+               <tr style="border:2px solid #4E87C2;">
+                   <th scope="row" style="border:2px solid #4E87C2;">ABC</th>
+                   <td style="border:2px solid #4E87C2;"><center>$198.00</center></td>
+                  
+                 </tr>
+                 </tbody>
+               </table>
+    <% end %><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+      
+</div>

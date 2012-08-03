@@ -1,0 +1,20 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline" data-theme="b">
+    <h1>Retail Demo</h1>
+    <a href="<%= url_for(:action => :empdetailsmgr) %>" class="ui-btn-left"  data-icon="back" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+     Back 
+    </a>
+      
+  </div>
+      <div data-role="content" class="ui-body ui-body-a">
+      <ul data-role="listview" data-theme="b">
+            <li><a data-ajax="false" href="<%= url_for(:action => :mgrcheck) %>">
+              <img src="/public/images/hours.png" />
+              <h3>Monthly hours</h3>
+              <p>Working hours vs Overtime</p>
+            </a></li>
+      </ul>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+</div>

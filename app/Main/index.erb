@@ -1,0 +1,41 @@
+<div data-role="page">
+
+	<div data-role="header" data-position="inline" data-theme="b">
+    <h1>Retail Demo</h1>
+   
+    <a href="<%= url_for :action => :resetlogin %>" class="ui-btn-right" data-icon="refresh">
+      Reset
+    </a>
+    
+      <a href="<%= url_for :action => :exit %>" class="ui-btn-left" data-icon="delete">
+            Exit
+          </a>
+	</div>
+
+      <div data-role="content" class="ui-body ui-body-a">
+  
+  
+  <br/><br/><br/>
+      <center><div class="ui-body ui-body-b" >
+     
+            <form data-ajax="false" action="<%= url_for(:action=>:do_login) %>" method="POST">
+              <div data-role="fieldcontain" >
+                 <label for="login">Login ID:</label>
+                 <input type="text" name="login" id="login" placeholder="Login ID"  />
+              </div>
+      
+              <div data-role="fieldcontain">
+                 <label for="password">Password</label>
+                 <input type="text" style="" name="password" id="password" placeholder="Password"  />
+              </div>
+      <center><a href="<%= url_for( :action => :logtake) %>">
+                         
+                          <img src="/public/images/scan.png" />
+                        </a></center>
+              <input  data-ajax="false" type="submit" value="Login"/>
+            </form>
+          </div></center>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  </div>
+
+</div>
