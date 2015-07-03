@@ -28,6 +28,6 @@ capabilities:
   - camera
   - native_browser
   - motorola_browser
-motorola_license_company: "Landon Essig"
-motorola_license: "7778656A081D151A000307711A7E1C75"
+motorola_license_company: "Divyansh Madan"
+motorola_license: "***********************"
 extensions:
